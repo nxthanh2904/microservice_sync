@@ -1,0 +1,13 @@
+version: "3"
+services: 
+    server:
+        build: server/
+        command: node index.js
+        ports:
+            - "8000:8000"
+    client:
+        build: client/
+        command: node index.js
+        network_mode: host
+        depends_on: 
+            - server

@@ -18,6 +18,10 @@ mongoose.connect(db, { useNewUrlParser: true,
 
 app.use(bodyParser());
 app.use(cors());
+app.get('/', (req, res)=>{
+        res.send("Hello World!");
+        console.log('Hello World !');
+})
 app.use('/website', website);
 app.use('/article', article);
 
